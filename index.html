@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two Sum Visualizer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Leetcode Easy: Two Sum Visualizer</h1>
+    <div class="intro-container">
+      <h2>
+        Description -
+        <a
+          href="https://leetcode.com/problems/two-sum/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Link to Leetcode problem</a
+        >
+      </h2>
+      <p>
+        Given an array of integers nums and an integer target, return indices of
+        the two numbers such that they add up to target. You may assume that
+        each input would have exactly one solution, and you may not use the same
+        element twice. You can return the answer in any order.
+      </p>
+
+      <div class="example-cases">
+        <p>Arr: [11, 15, 2, 7]</p>
+        <p>Target: 9</p>
+        <p>Output: [2,3]</p>
+      </div>
+
+      <h3>Brute Force Approach</h3>
+      <p>
+        This approach involves checking each possible pair of numbers to find
+        which pair adds up to the target and then returning the indices for that
+        pair. Since this involves a nested for loop, then that would be
+        O(n<sup>2</sup>) time complexity
+      </p>
+      <h3>Using a Map Approach</h3>
+      <p>
+        This approach involves a map and looping through the numbers array. For
+        each iteration of the loop, we want to calculate the difference of
+        subtracting the current number from the target.
+      </p>
+      <p>
+        If the difference is in the map, then that means we have found the pair
+        of numbers we are looking for and can return the indices. Otherwise, we
+        add the current number to the map along with its current index in the
+        array.
+      </p>
+    </div>
+
+    <main>
+      <section>
+        <h2>Brute Force approach - O(n<sup>2</sup>) time complexity</h2>
+        <button class="btn" id="brute-force-visual-btn">
+          Show Visualization
+        </button>
+        <div id="brute-force-output" class="output">
+          <p class="numbers-array"></p>
+          <p class="result-text"></p>
+        </div>
+      </section>
+      <section id="optimal-solution-section">
+        <h2>Map solution - O(n) time complexity</h2>
+        <button class="btn" id="optimal-visual-btn">Show Visualization</button>
+        <div id="current-value-output"></div>
+        <table id="table-output">
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Index</th>
+            </tr>
+          </thead>
+          <tbody id="map-table-body"></tbody>
+        </table>
+        <p id="final-optimal-result"></p>
+      </section>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
